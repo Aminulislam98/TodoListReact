@@ -1,8 +1,12 @@
 import { useState } from "react";
 
 const AddTaskSection = ({ todoList, setTodoList }) => {
+  const now = new Date();
+  const day = now.toLocaleDateString("en-GB", { weekday: "long" });
+  const time = now.toLocaleTimeString();
+
   const [inputValue, setInputValue] = useState("");
-  const [priority, setPriority] = useState("low");
+  const [priority, setPriority] = useState("Low");
   const addTaskHandler = () => {
     if (inputValue) {
       setTodoList(() => {
@@ -13,6 +17,8 @@ const AddTaskSection = ({ todoList, setTodoList }) => {
             priority,
             task: inputValue,
             completed: false,
+            day,
+            time,
           },
         ];
       });
@@ -43,9 +49,9 @@ const AddTaskSection = ({ todoList, setTodoList }) => {
                 setPriority(e.target.value);
               }}
             >
-              <option value="low">Low</option>
-              <option value="medium">Medium</option>
-              <option value="high">High</option>
+              <option value="Low">Low</option>
+              <option value="Medium">Medium</option>
+              <option value="High">High</option>
             </select>
             <button
               onClick={() => {
