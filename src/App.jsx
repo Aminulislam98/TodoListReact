@@ -6,7 +6,6 @@ import { useState } from "react";
 
 function App() {
   const [todoList, setTodoList] = useState([]);
-  console.log(todoList);
 
   return (
     <div>
@@ -15,7 +14,7 @@ function App() {
         todoList={todoList}
         setTodoList={setTodoList}
       ></AddTaskSection>
-      <TodoCard></TodoCard>
+      <TodoCard todoList={todoList}></TodoCard>
     </div>
   );
 }
