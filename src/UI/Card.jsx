@@ -40,7 +40,7 @@ const Card = ({ todo, todoList, setTodoList }) => {
           <h2 className="text-[#1a1a2e] text-base font-semibold">
             {todo.task}
           </h2>
-          <div className="text-[#aaa8cc] text-sm flex flex-row gap-2 mt-1">
+          <div className="text-[#aaa8cc] text-xs lg:text-sm flex flex-row gap-2 mt-1">
             <p className={`${priorityText[todo.priority]}`}>
               {todo.priority} priority
             </p>
