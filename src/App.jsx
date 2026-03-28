@@ -1,6 +1,7 @@
 import AddTaskSection from "./AddTaskSection/AddTaskSection.jsx";
 import "./App.css";
 import Navbar from "./navbar/Navbar.jsx";
+import TodoCard from "./todoTask/TodoCard.jsx";
 
 function App() {
   // const [todoList, setTodoList] = useState([]);
@@ -12,6 +13,7 @@ function App() {
       // todoList={todoList}
       // setTodoList={setTodoList}
       ></AddTaskSection>
+      <TodoCard></TodoCard>
     </div>
   );
 }
