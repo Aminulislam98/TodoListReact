@@ -1,7 +1,7 @@
 import React from "react";
 import { RxCross2 } from "react-icons/rx";
 
-const Card = ({ todo }) => {
+const Card = ({ todo, todoList, setTodoList }) => {
   const priority = {
     Low: "border-l-5 border-[#6c63ff]",
     Medium: "border-l-5 border-[#ffa94d]",
@@ -11,6 +11,17 @@ const Card = ({ todo }) => {
     Low: " text-[#6c63ff]",
     Medium: " text-[#ffa94d]",
     High: " text-[#ff6b6b]",
+  };
+
+  // delete todo
+  const deleteTodo = (id) => {
+    const exit = todoList.find((tList) => tList.id === id.id);
+    if (exit) {
+      setTodoList((prevList) => {
+        return prevList.filter((list) => list.id !== id.id);
+      });
+    }
+    return console.log("No data found");
   };
   return (
     <div

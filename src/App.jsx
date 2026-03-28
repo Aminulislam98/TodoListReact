@@ -14,7 +14,7 @@ function App() {
         todoList={todoList}
         setTodoList={setTodoList}
       ></AddTaskSection>
-      <TodoCard todoList={todoList}></TodoCard>
+      <TodoCard todoList={todoList} setTodoList={setTodoList}></TodoCard>
     </div>
   );
 }
