@@ -9,18 +9,20 @@ const AddTaskSection = ({ todoList, setTodoList }) => {
         ...todoList,
         {
           id: Math.random(),
-          task: inputValue,
           priority,
+          task: inputValue,
           completed: false,
         },
       ];
     });
+    setInputValue("");
   };
 
   return (
     <div className="add-task-section rounded-2xl p-4 max-w-5xl w-full mx-auto border border-gray-300 mt-10">
       <div className="add-task-section-content w-full border border-gray-300 rounded-lg space-y-2">
         <h2 className="font-semibold text-md">What do you need to add ?</h2>
+
         <input
           // setting up the input value and onChange handler to update the state
           value={inputValue}
